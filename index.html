@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- HTML
+    
+    HYPERTEXT
+    Texto que contém links para outros documentos.
+
+    MARKUP
+    Texto conterá marcações
+
+    LANGUAGE
+    Para me comunicar de certas maneiras. Sintaxes específicas para escrita.
+
+-->
+
+<html>
+
+<head>
+    <!-- Configurações da página -->
+    <title>Doe sangue! Doe vida!</title>
+
+    <link rel="stylesheet" href="/public/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Conteúdo visível para o usuário -->
+    <header>
+        <!--<img
+            class="logo"
+            src="logo.png"
+            alt="imagem de DOE"
+        >-->
+        <h1>D🔴E</h1>
+        <h2>A sua doação importa!</h2>
+        <p>Até 3 vidas com uma doação</p>
+        <p>Mais de 38.000 doações são necessárias todos os dias</p>
+        <p>1,9% da população brasileira doa sangue.</p>
+        <button>Quero ajudar</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+            <input
+                type="text"
+                name="name"
+                placeholder="Nome completo"
+            >
+            <input
+                type="text"
+                name="email"
+                placeholder="Email"
+            >
+            <input
+                type="text"
+                name="blood"
+                placeholder="Tipo sanguíneo"
+            >
+            <button>Quero ajudar</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+
+        <section class="donors">
+            {% for donor in donors %}
+                <div class="donor">
+                    <div class="blood">{{donor.blood}}</div>
+                    <p>{{donor.name}}</p>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer> Com ❤ Rocketseat!</footer>
+
+    <script src="/public/script.js">
+
+    </script>
+</body>
+
+</html>
